@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+  <title>Physics and other random stuff</title>
+  <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="              Blog Archives              Recent Posts          ">
+  <meta name="description" content="Define variables in a case statement in C++Just to be sure always use brackets in case:switch (foo) {  case 1:  {string foo("123");  }  break;  cas...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +24,7 @@
   <script src="/physics-blog/javascripts/modernizr-2.0.js"></script>
   <script src="/physics-blog/javascripts/ender.js"></script>
   <script src="/physics-blog/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/physics-blog/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <link href="/physics-blog/atom.xml" rel="alternate" title="Physics and other random stuff" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -35,9 +35,9 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/physics-blog/">My Octopress Blog</a></h1>
+  <h1><a href="/physics-blog/">Physics and other random stuff</a></h1>
   
-    <h2>A blogging framework for hackers.</h2>
+    <h2>Nerd culture and some scienece</h2>
   
 </hgroup>
 
@@ -63,6 +63,430 @@
       <div class="blog-index">
   
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/27/cpp-case-variables/">Cpp Case Variables</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-27T00:00:00+02:00" pubdate>Oct 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Define variables in a case statement in C++</h1>
+
+<p>Just to be sure always use brackets in case:</p>
+
+<p><code>
+switch (foo) {
+  case 1:
+  {</p>
+
+<pre><code>string foo("123");
+</code></pre>
+
+<p>  }
+  break;
+  case 2:
+  {</p>
+
+<pre><code>string bar("246");
+</code></pre>
+
+<p>  }
+}
+</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/22/gebaeck/">Gebaeck</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-22T00:00:00+02:00" pubdate>Oct 22<span>nd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Woher kommt der Begriff &#8220;Amerikaner&#8221;</h1>
+
+<p>Wenn man beim Bäcker steht, sieht man oft ein Gebäckstück names &#8220;Amerikaner&#8221;, siehe http://tinyurl.com/6gfq5jo.
+Da stellt sich natürlich die Frage woher kommt der Name.</p>
+
+<p>Eine Vermutung ist, dass es ursprünglich aus den USA kommt, aber es
+gibt eine noch viel einfachere Erklärung: sie haben viel Amoniak.
+Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie als &#8220;Amerikaner&#8221; abgekürzt.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/19/python-key-values-map/">Python Key Values Map</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-19T00:00:00+02:00" pubdate>Oct 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Get all keys + values of a map</h1>
+
+<p>It&#8217;s quite common that you need each key and value in a for loop for a map {0: &#8220;value&#8221;}.
+Here is a little code snippet to do it:</p>
+
+<p><code>
+items = {0: "value", 1: "value2"}</p>
+
+<p>for key, value in items.iteritems():
+  print key
+  print value
+</code></p>
+
+<p>That&#8217;s it.</p>
+
+<p>Learn python and fly like a butterfly.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/19/python-join-list/">Python Join List</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-19T00:00:00+02:00" pubdate>Oct 19<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Join a list of floats with python.</h1>
+
+<p>Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output them
+comma seperated. That&#8217;s quite easy in python:</p>
+
+<p><code>
+list = [1, 2.0, 3]
+" ".join(map(str, list))
+</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/16/latex-parse-files/">Latex Parse Files</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-16T00:00:00+02:00" pubdate>Oct 16<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Parse configuration with boost.</h1>
+
+<p>If you have some kind of simulation you always have input
+which you have to parse to get the initial data.</p>
+
+<ul>
+<li>One solution is to use raw c++ code, but it&#8217;s quite hard to read, complex and hard to change.</li>
+<li>One solution is to use boost/tokenizer together with boost/lexical_cast and boost/algorithm/string.</li>
+</ul>
+
+
+<p><code>
+// Include the needed libraries.</p>
+
+<h1>include &lt;boost/tokenizer.hpp></h1>
+
+<h1>include &lt;boost/algorithm/string.hpp></h1>
+
+<h1>include &lt;boost/lexical_cast.hpp></h1>
+
+<p>// The actual code</p>
+
+<p>// Open the file
+string filename = "filename-we-want-to-open";
+ifstream file(filename.c_str());</p>
+
+<p>// Shortcut to tokenizer type.
+typedef boost::tokenizer&lt;boost::char_separator<char> > tokenizer;
+// Define a seperator, which seperates by " ".
+// By default it skips empty content, so you can import "2.0       3 4" with this.
+char_separator<char> sep(" ");</p>
+
+<p>// Load the content of the file line by line.
+while (getline(file, line)) {
+  // First trim the line content of whitespaces.
+  // Therefore boost/algorith/string.hpp is used.
+  trim(line);
+  // Seperate the actual line.
+  tokenizer tokens(line, sep);</p>
+
+<p>  // Iterate over the availible tokens, so in our case "2", "3", "4".
+  for (tokenizer::iterator beg = tokens.begin(); beg != tokens.end(); ++beg) {</p>
+
+<pre><code>// Use boost::lexical_cast to convert the strings to doubles.
+double value = lexical_cast&lt;double&gt;(*beg);
+// ... Do something with the value.
+</code></pre>
+
+<p>  }
+}
+</code></p>
+
+<p>Sure there might be a bunch of more advanced/easier way to do it, but this worked for me.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/test/">Test</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-15T00:00:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is my initial test of jekyll</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/latex-references/">Latex References</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-15T00:00:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Reference parts of your content in a latex document.</h1>
+
+<p>Often you want to reference certain prts of your latex document.
+For example you have a diagramm in a float which float around somewhere in the document, but you want to refer to it in your text.
+Another often used example are equations.</p>
+
+<p>There are two steps you have to define:</p>
+
+<ul>
+<li>Define a label. For example \label{fig:picture-name-1}</li>
+<li>Reference to it using \ref{fig:picture-name-1}</li>
+</ul>
+
+
+<p>That&#8217;s it. Take care that most latex editors, for example kile
+compiles your document twice to get references/table of content right.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/latex-cases/">Latex Cases</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-15T00:00:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Write cases in latex</h1>
+
+<p>
+  Often you want to have something like
+  <img src="http://itp.tugraz.at/wiki/images/math/f/3/5/f355f3bdfe7fb3fc66b4c44e1cf0e734.png" />
+  when you write your own latex.
+</p>
+
+
+<p>This is quite easy
+<code>
+  f(n)=\begin{cases}</p>
+
+<pre><code>n/2,  &amp; \text{if }n\text{ even,}\\
+3n+1, &amp; \text{if }n\text{ odd.}
+</code></pre>
+
+<p>  \end{cases}
+</code></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/gnuplot-nice-png/">Gnuplot Nice Png</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-15T00:00:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Nice rendering for gnuplot images</h1>
+
+<p>If you use the default output of gnuplot eps or png the rendering
+is somehow quite bad. No antialiasing and small fonts, but there are better
+alternatives.</p>
+
+<p>set terminal pngcairo font &#8220;Gill Sans,9&#8221; linewidth 4 rounded size 1600,1200</p>
+
+<p>Try it out and you will be surprised</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
     <a href="/physics-blog/blog/archives">Blog Archives</a>
@@ -74,6 +498,26 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/10/27/cpp-case-variables/">Cpp Case Variables</a>
+      </li>
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/10/22/gebaeck/">Gebaeck</a>
+      </li>
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/10/19/python-key-values-map/">Python Key Values Map</a>
+      </li>
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/10/19/python-join-list/">Python Join List</a>
+      </li>
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/10/16/latex-parse-files/">Latex Parse Files</a>
+      </li>
     
   </ul>
 </section>
@@ -89,7 +533,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2011 - Your Name -
+  Copyright &copy; 2011 - Daniel Wehner -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

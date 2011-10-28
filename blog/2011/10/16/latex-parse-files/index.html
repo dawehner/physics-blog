@@ -1,0 +1,53 @@
+<h1>Parse configuration with boost.</h1>
+
+<p>If you have some kind of simulation you always have input
+which you have to parse to get the initial data.</p>
+
+<ul>
+<li>One solution is to use raw c++ code, but it&#8217;s quite hard to read, complex and hard to change.</li>
+<li>One solution is to use boost/tokenizer together with boost/lexical_cast and boost/algorithm/string.</li>
+</ul>
+
+
+<p><code>
+// Include the needed libraries.</p>
+
+<h1>include &lt;boost/tokenizer.hpp></h1>
+
+<h1>include &lt;boost/algorithm/string.hpp></h1>
+
+<h1>include &lt;boost/lexical_cast.hpp></h1>
+
+<p>// The actual code</p>
+
+<p>// Open the file
+string filename = "filename-we-want-to-open";
+ifstream file(filename.c_str());</p>
+
+<p>// Shortcut to tokenizer type.
+typedef boost::tokenizer&lt;boost::char_separator<char> > tokenizer;
+// Define a seperator, which seperates by " ".
+// By default it skips empty content, so you can import "2.0       3 4" with this.
+char_separator<char> sep(" ");</p>
+
+<p>// Load the content of the file line by line.
+while (getline(file, line)) {
+  // First trim the line content of whitespaces.
+  // Therefore boost/algorith/string.hpp is used.
+  trim(line);
+  // Seperate the actual line.
+  tokenizer tokens(line, sep);</p>
+
+<p>  // Iterate over the availible tokens, so in our case "2", "3", "4".
+  for (tokenizer::iterator beg = tokens.begin(); beg != tokens.end(); ++beg) {</p>
+
+<pre><code>// Use boost::lexical_cast to convert the strings to doubles.
+double value = lexical_cast&lt;double&gt;(*beg);
+// ... Do something with the value.
+</code></pre>
+
+<p>  }
+}
+</code></p>
+
+<p>Sure there might be a bunch of more advanced/easier way to do it, but this worked for me.</p>

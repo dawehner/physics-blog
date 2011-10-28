@@ -1,16 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Physics and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-10-28T07:06:19+02:00</updated>
+  <updated>2011-10-28T07:10:47+02:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Daniel Wehner]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cpp Case Variables]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/27/cpp-case-variables/"/>
+    <updated>2011-10-27T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/27/cpp-case-variables</id>
+    <content type="html"><![CDATA[<h1>Define variables in a case statement in C++</h1>
+
+<p>Just to be sure always use brackets in case:</p>
+
+<p><code>
+switch (foo) {
+  case 1:
+  {</p>
+
+<pre><code>string foo("123");
+</code></pre>
+
+<p>  }
+  break;
+  case 2:
+  {</p>
+
+<pre><code>string bar("246");
+</code></pre>
+
+<p>  }
+}
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gebaeck]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/22/gebaeck/"/>
+    <updated>2011-10-22T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/22/gebaeck</id>
+    <content type="html"><![CDATA[<h1>Woher kommt der Begriff &#8220;Amerikaner&#8221;</h1>
+
+<p>Wenn man beim Bäcker steht, sieht man oft ein Gebäckstück names &#8220;Amerikaner&#8221;, siehe http://tinyurl.com/6gfq5jo.
+Da stellt sich natürlich die Frage woher kommt der Name.</p>
+
+<p>Eine Vermutung ist, dass es ursprünglich aus den USA kommt, aber es
+gibt eine noch viel einfachere Erklärung: sie haben viel Amoniak.
+Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie als &#8220;Amerikaner&#8221; abgekürzt.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python Key Values Map]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map/"/>
+    <updated>2011-10-19T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map</id>
+    <content type="html"><![CDATA[<h1>Get all keys + values of a map</h1>
+
+<p>It&#8217;s quite common that you need each key and value in a for loop for a map {0: &#8220;value&#8221;}.
+Here is a little code snippet to do it:</p>
+
+<p><code>
+items = {0: "value", 1: "value2"}</p>
+
+<p>for key, value in items.iteritems():
+  print key
+  print value
+</code></p>
+
+<p>That&#8217;s it.</p>
+
+<p>Learn python and fly like a butterfly.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Python Join List]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/19/python-join-list/"/>
+    <updated>2011-10-19T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/19/python-join-list</id>
+    <content type="html"><![CDATA[<h1>Join a list of floats with python.</h1>
+
+<p>Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output them
+comma seperated. That&#8217;s quite easy in python:</p>
+
+<p><code>
+list = [1, 2.0, 3]
+" ".join(map(str, list))
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Latex Parse Files]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/16/latex-parse-files/"/>
+    <updated>2011-10-16T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/16/latex-parse-files</id>
+    <content type="html"><![CDATA[<h1>Parse configuration with boost.</h1>
+
+<p>If you have some kind of simulation you always have input
+which you have to parse to get the initial data.</p>
+
+<ul>
+<li>One solution is to use raw c++ code, but it&#8217;s quite hard to read, complex and hard to change.</li>
+<li>One solution is to use boost/tokenizer together with boost/lexical_cast and boost/algorithm/string.</li>
+</ul>
+
+
+<p><code>
+// Include the needed libraries.</p>
+
+<h1>include &lt;boost/tokenizer.hpp></h1>
+
+<h1>include &lt;boost/algorithm/string.hpp></h1>
+
+<h1>include &lt;boost/lexical_cast.hpp></h1>
+
+<p>// The actual code</p>
+
+<p>// Open the file
+string filename = "filename-we-want-to-open";
+ifstream file(filename.c_str());</p>
+
+<p>// Shortcut to tokenizer type.
+typedef boost::tokenizer&lt;boost::char_separator<char> > tokenizer;
+// Define a seperator, which seperates by " ".
+// By default it skips empty content, so you can import "2.0       3 4" with this.
+char_separator<char> sep(" ");</p>
+
+<p>// Load the content of the file line by line.
+while (getline(file, line)) {
+  // First trim the line content of whitespaces.
+  // Therefore boost/algorith/string.hpp is used.
+  trim(line);
+  // Seperate the actual line.
+  tokenizer tokens(line, sep);</p>
+
+<p>  // Iterate over the availible tokens, so in our case "2", "3", "4".
+  for (tokenizer::iterator beg = tokens.begin(); beg != tokens.end(); ++beg) {</p>
+
+<pre><code>// Use boost::lexical_cast to convert the strings to doubles.
+double value = lexical_cast&lt;double&gt;(*beg);
+// ... Do something with the value.
+</code></pre>
+
+<p>  }
+}
+</code></p>
+
+<p>Sure there might be a bunch of more advanced/easier way to do it, but this worked for me.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/15/test/"/>
+    <updated>2011-10-15T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/15/test</id>
+    <content type="html"><![CDATA[<p>This is my initial test of jekyll</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Latex References]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/15/latex-references/"/>
+    <updated>2011-10-15T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/15/latex-references</id>
+    <content type="html"><![CDATA[<h1>Reference parts of your content in a latex document.</h1>
+
+<p>Often you want to reference certain prts of your latex document.
+For example you have a diagramm in a float which float around somewhere in the document, but you want to refer to it in your text.
+Another often used example are equations.</p>
+
+<p>There are two steps you have to define:</p>
+
+<ul>
+<li>Define a label. For example \label{fig:picture-name-1}</li>
+<li>Reference to it using \ref{fig:picture-name-1}</li>
+</ul>
+
+
+<p>That&#8217;s it. Take care that most latex editors, for example kile
+compiles your document twice to get references/table of content right.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Latex Cases]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/15/latex-cases/"/>
+    <updated>2011-10-15T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/15/latex-cases</id>
+    <content type="html"><![CDATA[<h1>Write cases in latex</h1>
+
+<p>
+  Often you want to have something like
+  <img src="http://itp.tugraz.at/wiki/images/math/f/3/5/f355f3bdfe7fb3fc66b4c44e1cf0e734.png" />
+  when you write your own latex.
+</p>
+
+
+<p>This is quite easy
+<code>
+  f(n)=\begin{cases}</p>
+
+<pre><code>n/2,  &amp; \text{if }n\text{ even,}\\
+3n+1, &amp; \text{if }n\text{ odd.}
+</code></pre>
+
+<p>  \end{cases}
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gnuplot Nice Png]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/15/gnuplot-nice-png/"/>
+    <updated>2011-10-15T00:00:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/15/gnuplot-nice-png</id>
+    <content type="html"><![CDATA[<h1>Nice rendering for gnuplot images</h1>
+
+<p>If you use the default output of gnuplot eps or png the rendering
+is somehow quite bad. No antialiasing and small fonts, but there are better
+alternatives.</p>
+
+<p>set terminal pngcairo font &#8220;Gill Sans,9&#8221; linewidth 4 rounded size 1600,1200</p>
+
+<p>Try it out and you will be surprised</p>
+]]></content>
+  </entry>
   
 </feed>
