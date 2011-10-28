@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Get all keys + values of a map - Physics and other random stuff</title>
+  <title>Write cases in latex - Physics and other random stuff</title>
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="It&#8217;s quite common that you need each key and value in a for loop for a map {0: &#8220;value&#8221;}.Here is a little code snippet to do it:it...">
+  <meta name="description" content="  Often you want to have something like    when you write your own latex.This is quite easy  f(n)=\begin{cases}n/2,  &amp; \text{if }n\text{ even,}...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map/">
+  <link rel="canonical" href="http://dereine.github.com/physics-blog/blog/2011/10/22/latex-cases/">
   <link href="/physics-blog/favicon.png" rel="icon">
   <link href="/physics-blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/physics-blog/javascripts/modernizr-2.0.js"></script>
@@ -65,7 +65,7 @@
   
   <header>
     
-      <h1 class="entry-title">Get All Keys + Values of a Map</h1>
+      <h1 class="entry-title">Write Cases in Latex</h1>
     
     
       <p class="meta">
@@ -76,27 +76,30 @@
 
   
 
-<time datetime="2011-10-19T07:13:00+02:00" pubdate>Oct 19<span>th</span>, 2011</time>
+<time datetime="2011-10-22T07:13:00+02:00" pubdate>Oct 22<span>nd</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>It&#8217;s quite common that you need each key and value in a for loop for a map {0: &#8220;value&#8221;}.
-Here is a little code snippet to do it:</p>
+<div class="entry-content"><p>
+  Often you want to have something like
+  <img src="http://itp.tugraz.at/wiki/images/math/f/3/5/f355f3bdfe7fb3fc66b4c44e1cf0e734.png" />
+  when you write your own latex.
+</p>
 
-<p><code>
-items = {0: "value", 1: "value2"}</p>
 
-<p>for key, value in items.iteritems():
-  print key
-  print value
+<p>This is quite easy
+<code>
+  f(n)=\begin{cases}</p>
+
+<pre><code>n/2,  &amp; \text{if }n\text{ even,}\\
+3n+1, &amp; \text{if }n\text{ odd.}
+</code></pre>
+
+<p>  \end{cases}
 </code></p>
-
-<p>That&#8217;s it.</p>
-
-<p>Learn python and fly like a butterfly.</p>
 </div>
 
 
@@ -114,15 +117,21 @@ items = {0: "value", 1: "value2"}</p>
 
   
 
-<time datetime="2011-10-19T07:13:00+02:00" pubdate>Oct 19<span>th</span>, 2011</time>
+<time datetime="2011-10-22T07:13:00+02:00" pubdate>Oct 22<span>nd</span>, 2011</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/physics-blog/blog/categories/latex/'>latex</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map/" data-via="" data-counturl="http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dereine.github.com/physics-blog/blog/2011/10/22/latex-cases/" data-via="" data-counturl="http://dereine.github.com/physics-blog/blog/2011/10/22/latex-cases/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -135,10 +144,10 @@ items = {0: "value", 1: "value2"}</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/physics-blog/blog/2011/10/19/python-join-list/" title="Previous Post: Join a list of floats with python.">&laquo; Join a list of floats with python.</a>
+        <a class="basic-alignment left" href="/physics-blog/blog/2011/10/19/python-key-values-map/" title="Previous Post: Get all keys + values of a map">&laquo; Get all keys + values of a map</a>
       
       
-        <a class="basic-alignment right" href="/physics-blog/blog/2011/10/22/latex-cases/" title="next Post: Write cases in latex">Write cases in latex &raquo;</a>
+        <a class="basic-alignment right" href="/physics-blog/blog/2011/10/27/cpp-case-variables/" title="next Post: Define variables in a case statement in C++">Define variables in a case statement in C++ &raquo;</a>
       
     </p>
   </footer>

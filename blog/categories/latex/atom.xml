@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Physics and other random stuff]]></title>
-  <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
+  <title><![CDATA[Category: latex | Physics and other random stuff]]></title>
+  <link href="http://dereine.github.com/physics-blog/blog/categories/latex/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
   <updated>2011-10-28T07:24:25+02:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
@@ -12,49 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Woher kommt der Begriff Amerikaner]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/28/gebaeck/"/>
-    <updated>2011-10-28T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/28/gebaeck</id>
-    <content type="html"><![CDATA[<p>Wenn man beim Bäcker steht, sieht man oft ein Gebäckstück names &#8220;Amerikaner&#8221;, siehe http://tinyurl.com/6gfq5jo.
-Da stellt sich natürlich die Frage woher kommt der Name.</p>
-
-<p>Eine Vermutung ist, dass es ursprünglich aus den USA kommt, aber es
-gibt eine noch viel einfachere Erklärung: sie haben viel Amoniak.
-Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie als &#8220;Amerikaner&#8221; abgekürzt.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Define variables in a case statement in C++]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/27/cpp-case-variables/"/>
-    <updated>2011-10-27T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/27/cpp-case-variables</id>
-    <content type="html"><![CDATA[<p>Just to be sure always use brackets in case:</p>
-
-<p><code>
-switch (foo) {
-  case 1:
-  {</p>
-
-<pre><code>string foo("123");
-</code></pre>
-
-<p>  }
-  break;
-  case 2:
-  {</p>
-
-<pre><code>string bar("246");
-</code></pre>
-
-<p>  }
-}
-</code></p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Write cases in latex]]></title>
@@ -82,43 +39,6 @@ switch (foo) {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Get all keys + values of a map]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map/"/>
-    <updated>2011-10-19T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/19/python-key-values-map</id>
-    <content type="html"><![CDATA[<p>It&#8217;s quite common that you need each key and value in a for loop for a map {0: &#8220;value&#8221;}.
-Here is a little code snippet to do it:</p>
-
-<p><code>
-items = {0: "value", 1: "value2"}</p>
-
-<p>for key, value in items.iteritems():
-  print key
-  print value
-</code></p>
-
-<p>That&#8217;s it.</p>
-
-<p>Learn python and fly like a butterfly.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Join a list of floats with python.]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/19/python-join-list/"/>
-    <updated>2011-10-19T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/19/python-join-list</id>
-    <content type="html"><![CDATA[<p>Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output them
-comma seperated. That&#8217;s quite easy in python:</p>
-
-<p><code>
-list = [1, 2.0, 3]
-" ".join(map(str, list))
-</code></p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Parse configuration with boost.]]></title>
     <link href="http://dereine.github.com/physics-blog/blog/2011/10/16/latex-parse-files/"/>
     <updated>2011-10-16T07:13:00+02:00</updated>
@@ -127,7 +47,7 @@ list = [1, 2.0, 3]
 which you have to parse to get the initial data.</p>
 
 <ul>
-<li>One solution is to use raw c++ code, but it&#8217;s quite hard to read, complex and hard to change.</li>
+<li>One solution is to use raw c++ code, but it's quite hard to read, complex and hard to change.</li>
 <li>One solution is to use boost/tokenizer together with boost/lexical_cast and boost/algorithm/string.</li>
 </ul>
 
@@ -194,23 +114,8 @@ Another often used example are equations.</p>
 </ul>
 
 
-<p>That&#8217;s it. Take care that most latex editors, for example kile
+<p>That's it. Take care that most latex editors, for example kile
 compiles your document twice to get references/table of content right.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Nice rendering for gnuplot images]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/15/gnuplot-nice-png/"/>
-    <updated>2011-10-15T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/15/gnuplot-nice-png</id>
-    <content type="html"><![CDATA[<p>If you use the default output of gnuplot eps or png the rendering
-is somehow quite bad. No antialiasing and small fonts, but there are better
-alternatives.</p>
-
-<p>set terminal pngcairo font &#8220;Gill Sans,9&#8221; linewidth 4 rounded size 1600,1200</p>
-
-<p>Try it out and you will be surprised</p>
 ]]></content>
   </entry>
   
