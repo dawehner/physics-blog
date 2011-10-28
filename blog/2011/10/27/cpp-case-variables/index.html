@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="Just to be sure always use brackets in case:switch (foo) {  case 1:  {string foo("123");  }  break;  case 2:  {string bar("246");  }}">
+  <meta name="description" content="Just to be sure always use brackets in case:Case block assigning varibles ++   1234567891011switch (foo) {  case 1:  {    string foo(&quot;123&quot...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,25 +85,31 @@
 
 <div class="entry-content"><p>Just to be sure always use brackets in case:</p>
 
-<p><code>
-switch (foo) {
-  case 1:
-  {</p>
+<figure class='code'><figcaption><span>Case block assigning varibles ++  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">switch</span> <span class="p">(</span><span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">1</span>:
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">string</span> <span class="n">foo</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">2</span>:
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">string</span> <span class="n">bar</span><span class="p">(</span><span class="s">&quot;246&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>string foo("123");
-</code></pre>
-
-<p>  }
-  break;
-  case 2:
-  {</p>
-
-<pre><code>string bar("246");
-</code></pre>
-
-<p>  }
-}
-</code></p>
 </div>
 
 

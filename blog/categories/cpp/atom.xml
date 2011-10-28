@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cpp | Physics and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/blog/categories/cpp/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-10-28T07:24:25+02:00</updated>
+  <updated>2011-10-28T07:26:55+02:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -20,25 +20,42 @@
     <id>http://dereine.github.com/physics-blog/blog/2011/10/27/cpp-case-variables</id>
     <content type="html"><![CDATA[<p>Just to be sure always use brackets in case:</p>
 
-<p><code>
-switch (foo) {
-  case 1:
-  {</p>
-
-<pre><code>string foo("123");
-</code></pre>
-
-<p>  }
-  break;
-  case 2:
-  {</p>
-
-<pre><code>string bar("246");
-</code></pre>
-
-<p>  }
-}
-</code></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Case block assigning varibles ++  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">switch</span> <span class="p">(</span><span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">1</span>:
+</span><span class='line'>  <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">string</span> <span class="n">foo</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">case</span> <span class="mi">2</span>:
+</span><span class='line'>  <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">string</span> <span class="n">bar</span><span class="p">(</span><span class="s">&quot;246&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
