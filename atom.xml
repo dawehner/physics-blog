@@ -4,7 +4,7 @@
   <title><![CDATA[Physics and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-10-28T07:30:03+02:00</updated>
+  <updated>2011-10-28T07:31:29+02:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,20 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Woher kommt der Begriff Amerikaner]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/28/gebaeck/"/>
-    <updated>2011-10-28T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/28/gebaeck</id>
-    <content type="html"><![CDATA[<p>Wenn man beim Bäcker steht, sieht man oft ein Gebäckstück names &#8220;Amerikaner&#8221;, siehe http://tinyurl.com/6gfq5jo.
-Da stellt sich natürlich die Frage woher kommt der Name.</p>
-
-<p>Eine Vermutung ist, dass es ursprünglich aus den USA kommt, aber es
-gibt eine noch viel einfachere Erklärung: sie haben viel Amoniak.
-Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie als &#8220;Amerikaner&#8221; abgekürzt.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Define variables in a case statement in C++]]></title>
@@ -87,6 +73,20 @@ Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie
 </span><span class='line'>  <span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
 </span></code></pre></td></tr></table></div></figure>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Woher kommt der Begriff Amerikaner]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/22/gebaeck/"/>
+    <updated>2011-10-22T07:13:00+02:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/22/gebaeck</id>
+    <content type="html"><![CDATA[<p>Wenn man beim Bäcker steht, sieht man oft ein Gebäckstück names &#8220;Amerikaner&#8221;, siehe http://tinyurl.com/6gfq5jo.
+Da stellt sich natürlich die Frage woher kommt der Name.</p>
+
+<p>Eine Vermutung ist, dass es ursprünglich aus den USA kommt, aber es
+gibt eine noch viel einfachere Erklärung: sie haben viel Amoniak.
+Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie als &#8220;Amerikaner&#8221; abgekürzt.</p>
 ]]></content>
   </entry>
   
