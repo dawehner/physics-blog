@@ -4,7 +4,7 @@
   <title><![CDATA[Physics and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-10-28T07:14:22+02:00</updated>
+  <updated>2011-10-28T07:16:24+02:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[title]]></title>
+    <title type="html"><![CDATA[Octopress]]></title>
     <link href="http://dereine.github.com/physics-blog/blog/2011/10/28/title/"/>
     <updated>2011-10-28T07:13:00+02:00</updated>
     <id>http://dereine.github.com/physics-blog/blog/2011/10/28/title</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p>Just converted to octopress</p>
 ]]></content>
   </entry>
   
