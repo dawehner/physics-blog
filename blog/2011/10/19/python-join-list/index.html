@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output themcomma seperated. That&#8217;s quite easy in python:list = [1, ...">
+  <meta name="description" content="Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output themcomma seperated. That&#8217;s quite easy in python:Join list t...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,10 +86,13 @@
 <div class="entry-content"><p>Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output them
 comma seperated. That&#8217;s quite easy in python:</p>
 
-<p><code>
-list = [1, 2.0, 3]
-" ".join(map(str, list))
-</code></p>
+<figure class='code'><figcaption><span>Join list to a string   </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 

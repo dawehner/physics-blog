@@ -186,16 +186,19 @@ Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie
 </p>
 
 
-<p>This is quite easy
-<code>
-  f(n)=\begin{cases}</p>
+<p>This is quite easy</p>
 
-<pre><code>n/2,  &amp; \text{if }n\text{ even,}\\
-3n+1, &amp; \text{if }n\text{ odd.}
-</code></pre>
+<figure class='code'><figcaption><span>Cases   </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='latex'><span class='line'>  f(n)=<span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
+</span><span class='line'>    n/2,  <span class="nb">&amp;</span> <span class="k">\text</span><span class="nb">{</span>if <span class="nb">}</span>n<span class="k">\text</span><span class="nb">{</span> even,<span class="nb">}</span><span class="k">\\</span>
+</span><span class='line'>    3n+1, <span class="nb">&amp;</span> <span class="k">\text</span><span class="nb">{</span>if <span class="nb">}</span>n<span class="k">\text</span><span class="nb">{</span> odd.<span class="nb">}</span>
+</span><span class='line'>  <span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>  \end{cases}
-</code></p>
 </div>
   
   
@@ -229,13 +232,19 @@ Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie
   <div class="entry-content"><p>It&#8217;s quite common that you need each key and value in a for loop for a map {0: &#8220;value&#8221;}.
 Here is a little code snippet to do it:</p>
 
-<p><code>
-items = {0: "value", 1: "value2"}</p>
+<figure class='code'><figcaption><span>Iterate over a map   </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">items</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s">&quot;value&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s">&quot;value2&quot;</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">items</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+</span><span class='line'>  <span class="k">print</span> <span class="n">key</span>
+</span><span class='line'>  <span class="k">print</span> <span class="n">value</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>for key, value in items.iteritems():
-  print key
-  print value
-</code></p>
 
 <p>That&#8217;s it.</p>
 
@@ -273,10 +282,13 @@ items = {0: "value", 1: "value2"}</p>
   <div class="entry-content"><p>Let&#8217;s assume you have a list of numbers [1, 2.0, 3] and you want to output them
 comma seperated. That&#8217;s quite easy in python:</p>
 
-<p><code>
-list = [1, 2.0, 3]
-" ".join(map(str, list))
-</code></p>
+<figure class='code'><figcaption><span>Join list to a string   </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span class='line'><span class="s">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
   
   
@@ -316,46 +328,73 @@ which you have to parse to get the initial data.</p>
 </ul>
 
 
-<p><code>
-// Include the needed libraries.</p>
+<figure class='code'><figcaption><span>Parse a file with boost ++  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">// Include the needed libraries.</span>
+</span><span class='line'><span class="cp">#include &lt;boost/tokenizer.hpp&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;boost/algorithm/string.hpp&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;boost/lexical_cast.hpp&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// The actual code</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Open the file</span>
+</span><span class='line'><span class="n">string</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&quot;filename-we-want-to-open&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="n">ifstream</span> <span class="n">file</span><span class="p">(</span><span class="n">filename</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Shortcut to tokenizer type.</span>
+</span><span class='line'><span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">tokenizer</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">char_separator</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">tokenizer</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// Define a seperator, which seperates by &quot; &quot;.</span>
+</span><span class='line'><span class="c1">// By default it skips empty content, so you can import &quot;2.0       3 4&quot; with this.</span>
+</span><span class='line'><span class="n">char_separator</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">sep</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Load the content of the file line by line.</span>
+</span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>  <span class="c1">// First trim the line content of whitespaces.</span>
+</span><span class='line'>  <span class="c1">// Therefore boost/algorith/string.hpp is used.</span>
+</span><span class='line'>  <span class="n">trim</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
+</span><span class='line'>  <span class="c1">// Seperate the actual line.</span>
+</span><span class='line'>  <span class="n">tokenizer</span> <span class="n">tokens</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">// Iterate over the availible tokens, so in our case &quot;2&quot;, &quot;3&quot;, &quot;4&quot;.</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">tokenizer</span><span class="o">::</span><span class="n">iterator</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">beg</span> <span class="o">!=</span> <span class="n">tokens</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">beg</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Use boost::lexical_cast to convert the strings to doubles.</span>
+</span><span class='line'>    <span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="n">lexical_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// ... Do something with the value.</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<h1>include &lt;boost/tokenizer.hpp></h1>
-
-<h1>include &lt;boost/algorithm/string.hpp></h1>
-
-<h1>include &lt;boost/lexical_cast.hpp></h1>
-
-<p>// The actual code</p>
-
-<p>// Open the file
-string filename = "filename-we-want-to-open";
-ifstream file(filename.c_str());</p>
-
-<p>// Shortcut to tokenizer type.
-typedef boost::tokenizer&lt;boost::char_separator<char> > tokenizer;
-// Define a seperator, which seperates by " ".
-// By default it skips empty content, so you can import "2.0       3 4" with this.
-char_separator<char> sep(" ");</p>
-
-<p>// Load the content of the file line by line.
-while (getline(file, line)) {
-  // First trim the line content of whitespaces.
-  // Therefore boost/algorith/string.hpp is used.
-  trim(line);
-  // Seperate the actual line.
-  tokenizer tokens(line, sep);</p>
-
-<p>  // Iterate over the availible tokens, so in our case "2", "3", "4".
-  for (tokenizer::iterator beg = tokens.begin(); beg != tokens.end(); ++beg) {</p>
-
-<pre><code>// Use boost::lexical_cast to convert the strings to doubles.
-double value = lexical_cast&lt;double&gt;(*beg);
-// ... Do something with the value.
-</code></pre>
-
-<p>  }
-}
-</code></p>
 
 <p>Sure there might be a bunch of more advanced/easier way to do it, but this worked for me.</p>
 </div>
