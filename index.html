@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="Just to be sure always use brackets in case:Case block assigning varibles ++   1234567891011switch (foo) {  case 1:  {    string foo(&quot;123&quot...">
+  <meta name="description" content="As php is not strict like c++ you have a lot of crazy stuff.Here is a random exampleCase block assigning varibles    12345678910111213class foo {  ...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -62,6 +62,72 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/30/php-wtf/">You Know Php Is Broken as Well</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-30T07:13:00+01:00" pubdate>Oct 30<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As php is not strict like c++ you have a lot of crazy stuff.
+Here is a random example</p>
+
+<figure class='code'><figcaption><span>Case block assigning varibles   </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">class foo {</span>
+</span><span class='line'><span class="x">  function foo($val) {</span>
+</span><span class='line'><span class="x">    $this-&gt;foo = $val;</span>
+</span><span class='line'><span class="x">  }</span>
+</span><span class='line'><span class="x">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">$foo1 =&amp; $foo2;</span>
+</span><span class='line'><span class="x">print_r($foo1);</span>
+</span><span class='line'><span class="x">$foo1-&gt;foo = &quot;foo1&quot;;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
+</span><span class='line'><span class="x">$foo2 = new foo(&quot;foo3&quot;);</span>
+</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The interesting thing is that you reference a not existing variable , initialize this variable and alter
+the first variable. By default php throws quite some notices if you have non-strict code,
+but here php doesn&#8217;t complain</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -409,72 +475,6 @@ which you have to parse to get the initial data.</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/php-wtf/">You Know Php Is Broken as Well</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-  
-
-<time datetime="2011-10-15T07:13:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>As php is not strict like c++ you have a lot of crazy stuff.
-Here is a random example</p>
-
-<figure class='code'><figcaption><span>Case block assigning varibles   </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">class foo {</span>
-</span><span class='line'><span class="x">  function foo($val) {</span>
-</span><span class='line'><span class="x">    $this-&gt;foo = $val;</span>
-</span><span class='line'><span class="x">  }</span>
-</span><span class='line'><span class="x">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">$foo1 =&amp; $foo2;</span>
-</span><span class='line'><span class="x">print_r($foo1);</span>
-</span><span class='line'><span class="x">$foo1-&gt;foo = &quot;foo1&quot;;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
-</span><span class='line'><span class="x">$foo2 = new foo(&quot;foo3&quot;);</span>
-</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The interesting thing is that you reference a not existing variable , initialize this variable and alter
-the first variable. By default php throws quite some notices if you have non-strict code,
-but here php doesn&#8217;t complain</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
       <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/latex-references/">Reference Parts of Your Content in a Latex Document.</a></h1>
     
     
@@ -564,6 +564,10 @@ alternatives.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/physics-blog/blog/2011/10/30/php-wtf/">You know php is broken as well</a>
+      </li>
+    
+      <li class="post">
         <a href="/physics-blog/blog/2011/10/27/cpp-case-variables/">Define variables in a case statement in C++</a>
       </li>
     
@@ -577,10 +581,6 @@ alternatives.</p>
     
       <li class="post">
         <a href="/physics-blog/blog/2011/10/19/python-key-values-map/">Get all keys + values of a map</a>
-      </li>
-    
-      <li class="post">
-        <a href="/physics-blog/blog/2011/10/19/python-join-list/">Join a list of floats with python.</a>
       </li>
     
   </ul>

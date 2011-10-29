@@ -4,7 +4,7 @@
   <title><![CDATA[Physics and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-10-30T01:51:29+02:00</updated>
+  <updated>2011-10-30T01:52:25+02:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,6 +12,50 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[You know php is broken as well]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/10/30/php-wtf/"/>
+    <updated>2011-10-30T07:13:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/10/30/php-wtf</id>
+    <content type="html"><![CDATA[<p>As php is not strict like c++ you have a lot of crazy stuff.
+Here is a random example</p>
+
+<figure class='code'><figcaption><span>Case block assigning varibles   </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">class foo {</span>
+</span><span class='line'><span class="x">  function foo($val) {</span>
+</span><span class='line'><span class="x">    $this-&gt;foo = $val;</span>
+</span><span class='line'><span class="x">  }</span>
+</span><span class='line'><span class="x">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">$foo1 =&amp; $foo2;</span>
+</span><span class='line'><span class="x">print_r($foo1);</span>
+</span><span class='line'><span class="x">$foo1-&gt;foo = &quot;foo1&quot;;</span>
+</span><span class='line'>
+</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
+</span><span class='line'><span class="x">$foo2 = new foo(&quot;foo3&quot;);</span>
+</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The interesting thing is that you reference a not existing variable , initialize this variable and alter
+the first variable. By default php throws quite some notices if you have non-strict code,
+but here php doesn&#8217;t complain</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Define variables in a case statement in C++]]></title>
@@ -219,50 +263,6 @@ which you have to parse to get the initial data.</p>
 
 
 <p>Sure there might be a bunch of more advanced/easier way to do it, but this worked for me.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[You know php is broken as well]]></title>
-    <link href="http://dereine.github.com/physics-blog/blog/2011/10/15/php-wtf/"/>
-    <updated>2011-10-15T07:13:00+02:00</updated>
-    <id>http://dereine.github.com/physics-blog/blog/2011/10/15/php-wtf</id>
-    <content type="html"><![CDATA[<p>As php is not strict like c++ you have a lot of crazy stuff.
-Here is a random example</p>
-
-<figure class='code'><figcaption><span>Case block assigning varibles   </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">class foo {</span>
-</span><span class='line'><span class="x">  function foo($val) {</span>
-</span><span class='line'><span class="x">    $this-&gt;foo = $val;</span>
-</span><span class='line'><span class="x">  }</span>
-</span><span class='line'><span class="x">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">$foo1 =&amp; $foo2;</span>
-</span><span class='line'><span class="x">print_r($foo1);</span>
-</span><span class='line'><span class="x">$foo1-&gt;foo = &quot;foo1&quot;;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
-</span><span class='line'><span class="x">$foo2 = new foo(&quot;foo3&quot;);</span>
-</span><span class='line'><span class="x">print_r($foo1-&gt;foo);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The interesting thing is that you reference a not existing variable , initialize this variable and alter
-the first variable. By default php throws quite some notices if you have non-strict code,
-but here php doesn&#8217;t complain</p>
 ]]></content>
   </entry>
   
