@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: physics, | Physics and other random stuff]]></title>
+  <link href="http://dereine.github.com/physics-blog/blog/categories/physics-/atom.xml" rel="self"/>
+  <link href="http://dereine.github.com/physics-blog/"/>
+  <updated>2011-11-18T11:59:29+01:00</updated>
+  <id>http://dereine.github.com/physics-blog/</id>
+  <author>
+    <name><![CDATA[Daniel Wehner]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Use root.cern to find a minimum of a function]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/"/>
+    <updated>2011-11-17T15:44:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function</id>
+    <content type="html"><![CDATA[<p>There are several ways to find a minimum/optimum of a certain function, for example
+for linear equations you can setup a matrix and solve it.</p>
+
+<p>But there are also a lot of different kind of software packets. The one i want to show here
+is the ROOT package from cern [1]. This package can handle a lot, so i will cover only a
+really small part.</p>
+
+<p><em>USE THE CURRENT TRUNK</em></p>
+
+<h2>Installation under ubuntu</h2>
+
+<p>First setup some bash variables:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">ROOTSYS</span><span class="o">=</span>path_to/root
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ROOTSYS</span>/bin:<span class="nv">$PATH</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$ROOTSYS</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Then change to your root folder and run:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>root
+</span><span class='line'>./configure linux
+</span><span class='line'>make
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2>Use root to fit a function.</h2>
+
+<p>[1] http://root.cern.ch/drupal/content/about</p>
+]]></content>
+  </entry>
+  
+</feed>

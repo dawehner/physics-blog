@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="In latex it&#8217;s often helpful to define custom commands for certain things.One thing for example to write a derivation. 1  \newcommand{\diff}[2...">
+  <meta name="description" content="There are several ways to find a minimum/optimum of a certain function, for examplefor linear equations you can setup a matrix and solve it.But the...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -62,6 +62,72 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Use root.cern to Find a Minimum of a Function</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-17T15:44:00+01:00" pubdate>Nov 17<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There are several ways to find a minimum/optimum of a certain function, for example
+for linear equations you can setup a matrix and solve it.</p>
+
+<p>But there are also a lot of different kind of software packets. The one i want to show here
+is the ROOT package from cern [1]. This package can handle a lot, so i will cover only a
+really small part.</p>
+
+<p><em>USE THE CURRENT TRUNK</em></p>
+
+<h2>Installation under ubuntu</h2>
+
+<p>First setup some bash variables:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">export </span><span class="nv">ROOTSYS</span><span class="o">=</span>path_to/root
+</span><span class='line'><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$ROOTSYS</span>/bin:<span class="nv">$PATH</span>
+</span><span class='line'><span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$ROOTSYS</span>/lib:<span class="nv">$LD_LIBRARY_PATH</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then change to your root folder and run:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>root
+</span><span class='line'>./configure linux
+</span><span class='line'>make
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Use root to fit a function.</h2>
+
+<p>[1] http://root.cern.ch/drupal/content/about</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -574,44 +640,9 @@ compiles your document twice to get references/table of content right.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/gnuplot-nice-png/">Nice Rendering for Gnuplot Images</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-  
-
-<time datetime="2011-10-15T07:13:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you use the default output of gnuplot eps or png the rendering
-is somehow quite bad. No antialiasing and small fonts, but there are better
-alternatives.</p>
-
-<p>set terminal pngcairo font &#8220;Gill Sans,9&#8221; linewidth 4 rounded size 1600,1200</p>
-
-<p>Try it out and you will be surprised</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/physics-blog/blog/page/2/">&larr; Older</a>
     
     <a href="/physics-blog/blog/archives">Blog Archives</a>
     
@@ -622,6 +653,10 @@ alternatives.</p>
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Use root.cern to find a minimum of a function</a>
+      </li>
     
       <li class="post">
         <a href="/physics-blog/blog/2011/11/11/custom-latex-commands/">Custom latex commands</a>
@@ -637,10 +672,6 @@ alternatives.</p>
     
       <li class="post">
         <a href="/physics-blog/blog/2011/10/22/latex-cases/">Write cases in latex</a>
-      </li>
-    
-      <li class="post">
-        <a href="/physics-blog/blog/2011/10/22/gebaeck/">Woher kommt der Begriff Amerikaner</a>
       </li>
     
   </ul>
