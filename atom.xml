@@ -4,7 +4,7 @@
   <title><![CDATA[Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-11-24T23:08:24+01:00</updated>
+  <updated>2011-11-24T23:09:34+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -19,14 +19,21 @@
     <updated>2011-11-24T22:41:00+01:00</updated>
     <id>http://dereine.github.com/physics-blog/blog/2011/11/24/review-of-fullcalendar-module</id>
     <content type="html"><![CDATA[<p>As the fullcalendar module is written in a really good way it
-requires ctools, date and views to be able to be used. After
-installing this three modules you have to install the fullcalendar
+requires ctools, date and views to be able to be used.</p>
+
+<figure class='code'><figcaption><span>Install required modules  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>drush dl ctools, date, views
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After installing this three modules you have to install the fullcalendar
 javascript files as well. Luckily fullcalendar provides a drush command,
 so all you need to do is:</p>
 
 <figure class='code'><figcaption><span>Download the fullcalendar js code  </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>  drush fullcalendar-plugin
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>drush fullcalendar-plugin
 </span></code></pre></td></tr></table></div></figure>
 
 
