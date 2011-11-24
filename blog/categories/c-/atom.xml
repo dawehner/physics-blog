@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: c++ | Physics and other random stuff]]></title>
+  <title><![CDATA[Category: c++ | Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/blog/categories/c-/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-11-24T23:06:47+01:00</updated>
+  <updated>2011-11-24T23:08:24+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
