@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="If you use the default output of gnuplot eps or png the renderingis somehow quite bad. No antialiasing and small fonts, but there are betteralterna...">
+  <meta name="description" content="Often you want to reference certain prts of your latex document.For example you have a diagramm in a float which float around somewhere in the docu...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,50 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/latex-references/">Reference Parts of Your Content in a Latex Document.</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-10-15T07:13:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Often you want to reference certain prts of your latex document.
+For example you have a diagramm in a float which float around somewhere in the document, but you want to refer to it in your text.
+Another often used example are equations.</p>
+
+<p>There are two steps you have to define:</p>
+
+<ul>
+<li>Define a label. For example \label{fig:picture-name-1}</li>
+<li>Reference to it using \ref{fig:picture-name-1}</li>
+</ul>
+
+
+<p>That&#8217;s it. Take care that most latex editors, for example kile
+compiles your document twice to get references/table of content right.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/gnuplot-nice-png/">Nice Rendering for Gnuplot Images</a></h1>
     
     
@@ -115,7 +159,11 @@ alternatives.</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Use root.cern to find a minimum of a function</a>
+        <a href="/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/">Review of fullcalendar module</a>
+      </li>
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Compile root under ubuntu 11.10</a>
       </li>
     
       <li class="post">
@@ -128,10 +176,6 @@ alternatives.</p>
     
       <li class="post">
         <a href="/physics-blog/blog/2011/10/27/cpp-case-variables/">Define variables in a case statement in C++</a>
-      </li>
-    
-      <li class="post">
-        <a href="/physics-blog/blog/2011/10/22/latex-cases/">Write cases in latex</a>
       </li>
     
   </ul>

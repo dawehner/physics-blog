@@ -4,7 +4,7 @@
   <title><![CDATA[Physics and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-11-18T11:59:29+01:00</updated>
+  <updated>2011-11-24T23:06:47+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -14,7 +14,35 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Use root.cern to find a minimum of a function]]></title>
+    <title type="html"><![CDATA[Review of fullcalendar module]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/"/>
+    <updated>2011-11-24T22:41:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/11/24/review-of-fullcalendar-module</id>
+    <content type="html"><![CDATA[<p>As the fullcalendar module is written in a really good way it
+requires ctools, date and views to be able to be used. After
+installing this three modules you have to install the fullcalendar
+javascript files as well. Luckily fullcalendar provides a drush command,
+so all you need to do is:</p>
+
+<figure class='code'><figcaption><span>Download the fullcalendar js code  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>  drush fullcalendar-plugin
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After you have setup a content type/entity with a date field
+you can create a view which uses fullcalendar as style.</p>
+
+<p>As a result you get a nice looking date interface.
+<img src="http://wstaw.org/m/2011/11/24/dates.png" /></p>
+
+<p>Thanks tim.plunkett, aspilicious and geerlingguy
+for contributing this module.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Compile root under ubuntu 11.10]]></title>
     <link href="http://dereine.github.com/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/"/>
     <updated>2011-11-17T15:44:00+01:00</updated>
     <id>http://dereine.github.com/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function</id>
@@ -51,7 +79,7 @@ really small part.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Use root to fit a function.</h2>
+<p>Now you have root compiled and start to work with it.</p>
 
 <p>[1] http://root.cern.ch/drupal/content/about</p>
 ]]></content>

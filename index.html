@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="There are several ways to find a minimum/optimum of a certain function, for examplefor linear equations you can setup a matrix and solve it.But the...">
+  <meta name="description" content="As the fullcalendar module is written in a really good way itrequires ctools, date and views to be able to be used. Afterinstalling this three modu...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,7 +68,57 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Use root.cern to Find a Minimum of a Function</a></h1>
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/">Review of Fullcalendar Module</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-24T22:41:00+01:00" pubdate>Nov 24<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As the fullcalendar module is written in a really good way it
+requires ctools, date and views to be able to be used. After
+installing this three modules you have to install the fullcalendar
+javascript files as well. Luckily fullcalendar provides a drush command,
+so all you need to do is:</p>
+
+<figure class='code'><figcaption><span>Download the fullcalendar js code  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>  drush fullcalendar-plugin
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After you have setup a content type/entity with a date field
+you can create a view which uses fullcalendar as style.</p>
+
+<p>As a result you get a nice looking date interface.
+<img src="http://wstaw.org/m/2011/11/24/dates.png" /></p>
+
+<p>Thanks tim.plunkett, aspilicious and geerlingguy
+for contributing this module.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Compile Root Under Ubuntu 11.10</a></h1>
     
     
       <p class="meta">
@@ -119,7 +169,7 @@ really small part.</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Use root to fit a function.</h2>
+<p>Now you have root compiled and start to work with it.</p>
 
 <p>[1] http://root.cern.ch/drupal/content/about</p>
 </div>
@@ -596,50 +646,6 @@ which you have to parse to get the initial data.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/15/latex-references/">Reference Parts of Your Content in a Latex Document.</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-  
-
-<time datetime="2011-10-15T07:13:00+02:00" pubdate>Oct 15<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Often you want to reference certain prts of your latex document.
-For example you have a diagramm in a float which float around somewhere in the document, but you want to refer to it in your text.
-Another often used example are equations.</p>
-
-<p>There are two steps you have to define:</p>
-
-<ul>
-<li>Define a label. For example \label{fig:picture-name-1}</li>
-<li>Reference to it using \ref{fig:picture-name-1}</li>
-</ul>
-
-
-<p>That&#8217;s it. Take care that most latex editors, for example kile
-compiles your document twice to get references/table of content right.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/physics-blog/blog/page/2/">&larr; Older</a>
@@ -655,7 +661,11 @@ compiles your document twice to get references/table of content right.</p>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Use root.cern to find a minimum of a function</a>
+        <a href="/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/">Review of fullcalendar module</a>
+      </li>
+    
+      <li class="post">
+        <a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Compile root under ubuntu 11.10</a>
       </li>
     
       <li class="post">
@@ -668,10 +678,6 @@ compiles your document twice to get references/table of content right.</p>
     
       <li class="post">
         <a href="/physics-blog/blog/2011/10/27/cpp-case-variables/">Define variables in a case statement in C++</a>
-      </li>
-    
-      <li class="post">
-        <a href="/physics-blog/blog/2011/10/22/latex-cases/">Write cases in latex</a>
       </li>
     
   </ul>
