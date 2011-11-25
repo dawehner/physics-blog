@@ -4,7 +4,7 @@
   <title><![CDATA[Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-11-24T23:09:34+01:00</updated>
+  <updated>2011-11-25T08:39:18+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,6 +12,146 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Use root genetic algorithms]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/11/25/use-root-genetic-algorithms/"/>
+    <updated>2011-11-25T08:17:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/11/25/use-root-genetic-algorithms</id>
+    <content type="html"><![CDATA[<p>After the installation of the root package, see
+<a href="http://dereine.github.com/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Root Installation</a>
+you can play around a bit with many different packages.
+One examples are the genetic algorithms which gives
+you an elegant way to optimize problems.</p>
+
+<p>To be able to use it you need the following parts of root:</p>
+
+<figure class='code'><figcaption><span>Requirements ++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &quot;TMVA/IFitterTarget.h&quot;</span>
+</span><span class='line'><span class="cp">#include &quot;TMVA/GeneticAlgorithm.h&quot;</span>
+</span><span class='line'><span class="cp">#include &quot;TMVA/GeneticFitter.h&quot;</span>
+</span><span class='line'><span class="cp">#include &quot;TMath.h&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What are the general steps you need:</p>
+
+<ul>
+<li>Provide a object which represents your problem</li>
+<li>Setup the parameters you want to optimize</li>
+<li>Run the generic algorithms and use the results.</li>
+</ul>
+
+
+<h3>Fitness function</h3>
+
+<p>Your problem should be converted to a fitness function which
+returns you higher values, for better results.</p>
+
+<figure class='code'><figcaption><span>Fitness Object ++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">namespace</span> <span class="n">TMVA</span> <span class="p">{</span>
+</span><span class='line'><span class="n">class</span> <span class="n">MyFitness</span> <span class="o">:</span> <span class="n">public</span> <span class="n">IFitterTarget</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nl">public:</span>
+</span><span class='line'>  <span class="n">MyFitness</span><span class="p">()</span> <span class="o">:</span> <span class="n">IFitterTarget</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Setup some static parameters.</span>
+</span><span class='line'>    <span class="c1">// But you can also add some variables in the constructor.</span>
+</span><span class='line'>    <span class="n">n</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">sigma_2</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="kt">double</span> <span class="n">n</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">double</span> <span class="n">sigma_2</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Double_t</span> <span class="nf">EstimatorFunction</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Double_t</span><span class="o">&gt;&amp;</span> <span class="n">factors</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">x</span> <span class="o">=</span> <span class="n">factors</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">y</span> <span class="o">=</span> <span class="n">factors</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">r_2</span> <span class="o">=</span> <span class="n">Power</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Power</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Power</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">Pi</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sqrt</span><span class="p">(</span><span class="n">r_2</span><span class="p">)),</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Exp</span><span class="p">(</span><span class="o">-</span><span class="n">r_2</span> <span class="o">/</span> <span class="n">sigma_2</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="o">-</span><span class="n">f</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you have to setup your parameters in your main code:</p>
+
+<figure class='code'><figcaption><span>Run the genetic algorithms ++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// Get a object which describes your problem.</span>
+</span><span class='line'><span class="n">TMVA</span><span class="o">::</span><span class="n">IFitterTarget</span><span class="o">*</span> <span class="n">Fitness</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TMVA</span><span class="o">::</span><span class="n">MyFitness</span><span class="p">();</span>
+</span><span class='line'><span class="c1">// Setup the availible parameters, here 2.</span>
+</span><span class='line'><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TMVA</span><span class="o">::</span><span class="n">Interval</span><span class="o">*&gt;</span> <span class="n">ranges</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// -1, 1 is the availible range of the parameters.</span>
+</span><span class='line'><span class="c1">// This can speed up the problem.</span>
+</span><span class='line'><span class="n">ranges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TMVA</span><span class="o">::</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="n">ranges</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TMVA</span><span class="o">::</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> And finally run the genetic fitter.</p>
+
+<figure class='code'><figcaption><span>++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// Run the genetic fitter</span>
+</span><span class='line'><span class="n">TMVA</span><span class="o">::</span><span class="n">GeneticFitter</span> <span class="n">mg</span><span class="p">(</span><span class="o">*</span><span class="n">Fitness</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="s">&quot;PopSize=1000:Steps=3000&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// The result vector has the final values of the parameter.</span>
+</span><span class='line'><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Double_t</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+</span><span class='line'><span class="n">mg</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">Result</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This was it.</p>
+
+<p>At the end here is a complete file which handles two problems:</p>
+
+<figure class='code'><figcaption><span>++</span><a href='http://paste.pocoo.org/show/512668/'>link</a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// The code</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Review of fullcalendar module]]></title>
@@ -44,7 +184,7 @@ you can create a view which uses fullcalendar as style.</p>
 <img src="http://wstaw.org/m/2011/11/24/dates.png" /></p>
 
 <p>Thanks tim.plunkett, aspilicious and geerlingguy
-for contributing this module.</p>
+for contributing to that module.</p>
 ]]></content>
   </entry>
   

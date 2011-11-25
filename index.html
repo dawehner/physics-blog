@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="As the fullcalendar module is written in a really good way itrequires ctools, date and views to be able to be used.Install required modules   1drus...">
+  <meta name="description" content="After the installation of the root package, seeRoot Installationyou can play around a bit with many different packages.One examples are the genetic...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +68,168 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/11/25/use-root-genetic-algorithms/">Use Root Genetic Algorithms</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-11-25T08:17:00+01:00" pubdate>Nov 25<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After the installation of the root package, see
+<a href="http://dereine.github.com/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Root Installation</a>
+you can play around a bit with many different packages.
+One examples are the genetic algorithms which gives
+you an elegant way to optimize problems.</p>
+
+<p>To be able to use it you need the following parts of root:</p>
+
+<figure class='code'><figcaption><span>Requirements ++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &quot;TMVA/IFitterTarget.h&quot;</span>
+</span><span class='line'><span class="cp">#include &quot;TMVA/GeneticAlgorithm.h&quot;</span>
+</span><span class='line'><span class="cp">#include &quot;TMVA/GeneticFitter.h&quot;</span>
+</span><span class='line'><span class="cp">#include &quot;TMath.h&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What are the general steps you need:</p>
+
+<ul>
+<li>Provide a object which represents your problem</li>
+<li>Setup the parameters you want to optimize</li>
+<li>Run the generic algorithms and use the results.</li>
+</ul>
+
+
+<h3>Fitness function</h3>
+
+<p>Your problem should be converted to a fitness function which
+returns you higher values, for better results.</p>
+
+<figure class='code'><figcaption><span>Fitness Object ++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">namespace</span> <span class="n">TMVA</span> <span class="p">{</span>
+</span><span class='line'><span class="n">class</span> <span class="n">MyFitness</span> <span class="o">:</span> <span class="n">public</span> <span class="n">IFitterTarget</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nl">public:</span>
+</span><span class='line'>  <span class="n">MyFitness</span><span class="p">()</span> <span class="o">:</span> <span class="n">IFitterTarget</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Setup some static parameters.</span>
+</span><span class='line'>    <span class="c1">// But you can also add some variables in the constructor.</span>
+</span><span class='line'>    <span class="n">n</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">sigma_2</span> <span class="o">=</span> <span class="mf">0.15</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="kt">double</span> <span class="n">n</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">double</span> <span class="n">sigma_2</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Double_t</span> <span class="nf">EstimatorFunction</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Double_t</span><span class="o">&gt;&amp;</span> <span class="n">factors</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">x</span> <span class="o">=</span> <span class="n">factors</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">y</span> <span class="o">=</span> <span class="n">factors</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">r_2</span> <span class="o">=</span> <span class="n">Power</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Power</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Double_t</span> <span class="n">f</span> <span class="o">=</span> <span class="n">Power</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">Pi</span><span class="p">()</span> <span class="o">*</span> <span class="n">Sqrt</span><span class="p">(</span><span class="n">r_2</span><span class="p">)),</span> <span class="mf">2.0</span><span class="p">)</span> <span class="o">*</span> <span class="n">Exp</span><span class="p">(</span><span class="o">-</span><span class="n">r_2</span> <span class="o">/</span> <span class="n">sigma_2</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">return</span> <span class="o">-</span><span class="n">f</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you have to setup your parameters in your main code:</p>
+
+<figure class='code'><figcaption><span>Run the genetic algorithms ++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// Get a object which describes your problem.</span>
+</span><span class='line'><span class="n">TMVA</span><span class="o">::</span><span class="n">IFitterTarget</span><span class="o">*</span> <span class="n">Fitness</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TMVA</span><span class="o">::</span><span class="n">MyFitness</span><span class="p">();</span>
+</span><span class='line'><span class="c1">// Setup the availible parameters, here 2.</span>
+</span><span class='line'><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">TMVA</span><span class="o">::</span><span class="n">Interval</span><span class="o">*&gt;</span> <span class="n">ranges</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'><span class="c1">// -1, 1 is the availible range of the parameters.</span>
+</span><span class='line'><span class="c1">// This can speed up the problem.</span>
+</span><span class='line'><span class="n">ranges</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TMVA</span><span class="o">::</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="n">ranges</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TMVA</span><span class="o">::</span><span class="n">Interval</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> And finally run the genetic fitter.</p>
+
+<figure class='code'><figcaption><span>++ </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// Run the genetic fitter</span>
+</span><span class='line'><span class="n">TMVA</span><span class="o">::</span><span class="n">GeneticFitter</span> <span class="n">mg</span><span class="p">(</span><span class="o">*</span><span class="n">Fitness</span><span class="p">,</span> <span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">ranges</span><span class="p">,</span> <span class="s">&quot;PopSize=1000:Steps=3000&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// The result vector has the final values of the parameter.</span>
+</span><span class='line'><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Double_t</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">;</span>
+</span><span class='line'><span class="n">mg</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">Result</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This was it.</p>
+
+<p>At the end here is a complete file which handles two problems:</p>
+
+<figure class='code'><figcaption><span>++</span><a href='http://paste.pocoo.org/show/512668/'>link</a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="c1">// The code</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/">Review of Fullcalendar Module</a></h1>
     
     
@@ -112,7 +274,7 @@ you can create a view which uses fullcalendar as style.</p>
 <img src="http://wstaw.org/m/2011/11/24/dates.png" /></p>
 
 <p>Thanks tim.plunkett, aspilicious and geerlingguy
-for contributing this module.</p>
+for contributing to that module.</p>
 </div>
   
   
@@ -545,114 +707,6 @@ comma seperated. That&#8217;s quite easy in python:</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/16/latex-parse-files/">Parse Configuration With Boost.</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-  
-
-<time datetime="2011-10-16T07:13:00+02:00" pubdate>Oct 16<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you have some kind of simulation you always have input
-which you have to parse to get the initial data.</p>
-
-<ul>
-<li>One solution is to use raw c++ code, but it&#8217;s quite hard to read, complex and hard to change.</li>
-<li>One solution is to use boost/tokenizer together with boost/lexical_cast and boost/algorithm/string.</li>
-</ul>
-
-
-<figure class='code'><figcaption><span>Parse a file with boost ++  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">// Include the needed libraries.</span>
-</span><span class='line'><span class="cp">#include &lt;boost/tokenizer.hpp&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;boost/algorithm/string.hpp&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;boost/lexical_cast.hpp&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// The actual code</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Open the file</span>
-</span><span class='line'><span class="n">string</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&quot;filename-we-want-to-open&quot;</span><span class="p">;</span>
-</span><span class='line'><span class="n">ifstream</span> <span class="n">file</span><span class="p">(</span><span class="n">filename</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Shortcut to tokenizer type.</span>
-</span><span class='line'><span class="k">typedef</span> <span class="n">boost</span><span class="o">::</span><span class="n">tokenizer</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">char_separator</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">tokenizer</span><span class="p">;</span>
-</span><span class='line'><span class="c1">// Define a seperator, which seperates by &quot; &quot;.</span>
-</span><span class='line'><span class="c1">// By default it skips empty content, so you can import &quot;2.0       3 4&quot; with this.</span>
-</span><span class='line'><span class="n">char_separator</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">sep</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Load the content of the file line by line.</span>
-</span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
-</span><span class='line'>  <span class="c1">// First trim the line content of whitespaces.</span>
-</span><span class='line'>  <span class="c1">// Therefore boost/algorith/string.hpp is used.</span>
-</span><span class='line'>  <span class="n">trim</span><span class="p">(</span><span class="n">line</span><span class="p">);</span>
-</span><span class='line'>  <span class="c1">// Seperate the actual line.</span>
-</span><span class='line'>  <span class="n">tokenizer</span> <span class="n">tokens</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">sep</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// Iterate over the availible tokens, so in our case &quot;2&quot;, &quot;3&quot;, &quot;4&quot;.</span>
-</span><span class='line'>  <span class="k">for</span> <span class="p">(</span><span class="n">tokenizer</span><span class="o">::</span><span class="n">iterator</span> <span class="n">beg</span> <span class="o">=</span> <span class="n">tokens</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">beg</span> <span class="o">!=</span> <span class="n">tokens</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">beg</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Use boost::lexical_cast to convert the strings to doubles.</span>
-</span><span class='line'>    <span class="kt">double</span> <span class="n">value</span> <span class="o">=</span> <span class="n">lexical_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">beg</span><span class="p">);</span>
-</span><span class='line'>    <span class="c1">// ... Do something with the value.</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Sure there might be a bunch of more advanced/easier way to do it, but this worked for me.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/physics-blog/blog/page/2/">&larr; Older</a>
@@ -668,6 +722,10 @@ which you have to parse to get the initial data.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/physics-blog/blog/2011/11/25/use-root-genetic-algorithms/">Use root genetic algorithms</a>
+      </li>
+    
+      <li class="post">
         <a href="/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/">Review of fullcalendar module</a>
       </li>
     
@@ -681,10 +739,6 @@ which you have to parse to get the initial data.</p>
     
       <li class="post">
         <a href="/physics-blog/blog/2011/10/30/php-wtf/">You know php is broken as well</a>
-      </li>
-    
-      <li class="post">
-        <a href="/physics-blog/blog/2011/10/27/cpp-case-variables/">Define variables in a case statement in C++</a>
       </li>
     
   </ul>
