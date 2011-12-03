@@ -4,7 +4,7 @@
   <title><![CDATA[Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-11-25T08:39:18+01:00</updated>
+  <updated>2011-12-03T14:15:06+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Show largest mysql tables]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/12/03/show-largest-mysql-tables/"/>
+    <updated>2011-12-03T14:13:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/12/03/show-largest-mysql-tables</id>
+    <content type="html"><![CDATA[<p>Here is a small sql commando to show the largest mysql tables
+on your system.</p>
+
+<figure class='code'><figcaption><span>Largest mysql tables  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">table_schema</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="k">table_name</span><span class="p">),</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="n">table_rows</span> <span class="o">/</span> <span class="mi">1000000</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span>                                    <span class="k">rows</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="n">data_length</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span>                    <span class="k">DATA</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="n">index_length</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span>                   <span class="n">idx</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">((</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span> <span class="n">total_size</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">ROUND</span><span class="p">(</span><span class="n">index_length</span> <span class="o">/</span> <span class="n">data_length</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>                                           <span class="n">idxfrac</span>
+</span><span class='line'><span class="k">FROM</span>   <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
+</span><span class='line'><span class="k">ORDER</span>  <span class="k">BY</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span> <span class="k">DESC</span>
+</span><span class='line'><span class="k">LIMIT</span>  <span class="mi">10</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Thanks http://www.mysqlperformanceblog.com/2008/02/04/finding-out-largest-tables-on-mysql-server/ for the code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Use root genetic algorithms]]></title>

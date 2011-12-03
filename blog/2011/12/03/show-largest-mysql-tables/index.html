@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Write cases in latex - Physics drupal and other random stuff</title>
+  <title>Show largest mysql tables - Physics drupal and other random stuff</title>
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="  Often you want to have something like    when you write your own latex.This is quite easyCases    1234  f(n)=\begin{cases}    n/2,  &amp; \text{i...">
+  <meta name="description" content="Here is a small sql commando to show the largest mysql tableson your system.Largest mysql tables   123456789SELECT CONCAT(table_schema, &#39;.&#39;...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dereine.github.com/physics-blog/blog/2011/10/22/latex-cases/">
+  <link rel="canonical" href="http://dereine.github.com/physics-blog/blog/2011/12/03/show-largest-mysql-tables/">
   <link href="/physics-blog/favicon.png" rel="icon">
   <link href="/physics-blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/physics-blog/javascripts/modernizr-2.0.js"></script>
@@ -65,7 +65,7 @@
   
   <header>
     
-      <h1 class="entry-title">Write Cases in Latex</h1>
+      <h1 class="entry-title">Show Largest Mysql Tables</h1>
     
     
       <p class="meta">
@@ -76,33 +76,39 @@
 
   
 
-<time datetime="2011-10-22T07:13:00+02:00" pubdate>Oct 22<span>nd</span>, 2011</time>
+<time datetime="2011-12-03T14:13:00+01:00" pubdate>Dec 3<span>rd</span>, 2011</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>
-  Often you want to have something like
-  <img src="http://itp.tugraz.at/wiki/images/math/f/3/5/f355f3bdfe7fb3fc66b4c44e1cf0e734.png" />
-  when you write your own latex.
-</p>
+<div class="entry-content"><p>Here is a small sql commando to show the largest mysql tables
+on your system.</p>
 
-
-<p>This is quite easy</p>
-
-<figure class='code'><figcaption><span>Cases   </span></figcaption>
+<figure class='code'><figcaption><span>Largest mysql tables  </span></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='latex'><span class='line'>  f(n)=<span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
-</span><span class='line'>    n/2,  <span class="nb">&amp;</span> <span class="k">\text</span><span class="nb">{</span>if <span class="nb">}</span>n<span class="k">\text</span><span class="nb">{</span> even,<span class="nb">}</span><span class="k">\\</span>
-</span><span class='line'>    3n+1, <span class="nb">&amp;</span> <span class="k">\text</span><span class="nb">{</span>if <span class="nb">}</span>n<span class="k">\text</span><span class="nb">{</span> odd.<span class="nb">}</span>
-</span><span class='line'>  <span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">SELECT</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">table_schema</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="k">table_name</span><span class="p">),</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="n">table_rows</span> <span class="o">/</span> <span class="mi">1000000</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span>                                    <span class="k">rows</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="n">data_length</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span>                    <span class="k">DATA</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">(</span><span class="n">index_length</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span>                   <span class="n">idx</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">CONCAT</span><span class="p">(</span><span class="n">ROUND</span><span class="p">((</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="s1">&#39;G&#39;</span><span class="p">)</span> <span class="n">total_size</span><span class="p">,</span>
+</span><span class='line'>       <span class="n">ROUND</span><span class="p">(</span><span class="n">index_length</span> <span class="o">/</span> <span class="n">data_length</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>                                           <span class="n">idxfrac</span>
+</span><span class='line'><span class="k">FROM</span>   <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span>
+</span><span class='line'><span class="k">ORDER</span>  <span class="k">BY</span> <span class="n">data_length</span> <span class="o">+</span> <span class="n">index_length</span> <span class="k">DESC</span>
+</span><span class='line'><span class="k">LIMIT</span>  <span class="mi">10</span><span class="p">;</span>
 </span></code></pre></td></tr></table></div></figure>
 
+
+<p>Thanks http://www.mysqlperformanceblog.com/2008/02/04/finding-out-largest-tables-on-mysql-server/ for the code.</p>
 </div>
 
 
@@ -120,12 +126,12 @@
 
   
 
-<time datetime="2011-10-22T07:13:00+02:00" pubdate>Oct 22<span>nd</span>, 2011</time>
+<time datetime="2011-12-03T14:13:00+01:00" pubdate>Dec 3<span>rd</span>, 2011</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/physics-blog/blog/categories/latex/'>latex</a>
+    <a class='category' href='/physics-blog/blog/categories/mysql/'>mysql</a>
   
 </span>
 
@@ -134,7 +140,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dereine.github.com/physics-blog/blog/2011/10/22/latex-cases/" data-via="" data-counturl="http://dereine.github.com/physics-blog/blog/2011/10/22/latex-cases/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dereine.github.com/physics-blog/blog/2011/12/03/show-largest-mysql-tables/" data-via="" data-counturl="http://dereine.github.com/physics-blog/blog/2011/12/03/show-largest-mysql-tables/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -145,10 +151,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/physics-blog/blog/2011/10/22/gebaeck/" title="Previous Post: Woher kommt der Begriff Amerikaner">&laquo; Woher kommt der Begriff Amerikaner</a>
+        <a class="basic-alignment left" href="/physics-blog/blog/2011/11/25/use-root-genetic-algorithms/" title="Previous Post: Use root genetic algorithms">&laquo; Use root genetic algorithms</a>
       
-      
-        <a class="basic-alignment right" href="/physics-blog/blog/2011/10/27/cpp-case-variables/" title="next Post: Define variables in a case statement in C++">Define variables in a case statement in C++ &raquo;</a>
       
     </p>
   </footer>

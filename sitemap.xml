@@ -59,11 +59,17 @@
         <lastmod>2011-11-25T08:39:08+01:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://dereine.github.com/physics-blog/blog/2011/12/03/show-largest-mysql-tables/
+        </loc>
+        <lastmod>2011-12-03T14:14:49+01:00</lastmod>
+    </url>
+    <url>
         <loc>http://dereine.github.com/physics-blog/</loc>
-        <lastmod>2011-11-25T08:39:08+01:00</lastmod>
+        <lastmod>2011-12-03T14:14:49+01:00</lastmod>
     </url>
     <url>
         <loc>http://dereine.github.com/physics-blog/blog/archives/</loc>
-        <lastmod>2011-11-25T08:39:08+01:00</lastmod>
+        <lastmod>2011-12-03T14:14:49+01:00</lastmod>
     </url>
 </urlset>
