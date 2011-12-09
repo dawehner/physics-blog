@@ -9,7 +9,7 @@
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="As written on Beerware there is a famous licensewhich allows you togive out a beer to the authordrink on the health of the authorsend the author a ...">
+  <meta name="description" content="Asume you want to plot a big matrix, each has either 0 or 1.The perfect display would be something similar like a qr-code:Pyplot gives you the perf...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -62,6 +62,75 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/physics-blog/blog/2011/12/09/plot-matrix/">Plot Matrix</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-12-09T15:11:00+01:00" pubdate>Dec 9<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Asume you want to plot a big matrix, each has either 0 or 1.
+The perfect display would be something similar like a qr-code:</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/8/87/QRCode.png" /></p>
+
+<p>Pyplot gives you the perfect tools to do that, see the endresult:</p>
+
+<p><img src="http://wstaw.org/m/2011/12/09/image.png" /></p>
+
+<p>Here is the full code:</p>
+
+<figure class='code'><figcaption><span>lang=python </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import matplotlib.pylab as plt
+</span><span class='line'>import matplotlib.colors as colors
+</span><span class='line'>
+</span><span class='line'>from pylab import rand
+</span><span class='line'>
+</span><span class='line'># Black and white color map
+</span><span class='line'>bw_map = colors.ListedColormap(['black', 'white'])
+</span><span class='line'>
+</span><span class='line'># Generate a 64x64 matrix and plot it with
+</span><span class='line'>plt.matshow(rand(64,64),fignum=100,cmap=bw_map)
+</span><span class='line'>
+</span><span class='line'># And show it
+</span><span class='line'>plt.show()</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -712,42 +781,6 @@ but here php doesn&#8217;t complain.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/physics-blog/blog/2011/10/22/gebaeck/">Woher Kommt Der Begriff Amerikaner</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-  
-
-<time datetime="2011-10-22T07:13:00+02:00" pubdate>Oct 22<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Wenn man beim Bäcker steht, sieht man oft ein Gebäckstück names &#8220;Amerikaner&#8221;, siehe http://tinyurl.com/6gfq5jo.
-Da stellt sich natürlich die Frage woher kommt der Name.</p>
-
-<p>Eine Vermutung ist, dass es ursprünglich aus den USA kommt, aber es
-gibt eine noch viel einfachere Erklärung: sie haben viel Amoniak.
-Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie als &#8220;Amerikaner&#8221; abgekürzt.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/physics-blog/blog/page/2/">&larr; Older</a>
@@ -763,6 +796,10 @@ Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/physics-blog/blog/2011/12/09/plot-matrix/">Plot matrix</a>
+      </li>
+    
+      <li class="post">
         <a href="/physics-blog/blog/2011/12/06/the-mate-license/">The mate license</a>
       </li>
     
@@ -776,10 +813,6 @@ Da sich &#8220;Amoniak&#8221;-ianer nicht wirklich aussprechen lässt wurden sie
     
       <li class="post">
         <a href="/physics-blog/blog/2011/11/24/review-of-fullcalendar-module/">Review of fullcalendar module</a>
-      </li>
-    
-      <li class="post">
-        <a href="/physics-blog/blog/2011/11/17/use-root-dot-cern-to-find-a-minimum-of-a-function/">Compile root under ubuntu 11.10</a>
       </li>
     
   </ul>

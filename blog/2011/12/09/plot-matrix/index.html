@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: mysql - Physics drupal and other random stuff</title>
+  <title>Plot matrix - Physics drupal and other random stuff</title>
   <meta name="author" content="Daniel Wehner">
 
   
-  <meta name="description" content="Category: mysql">
+  <meta name="description" content="Asume you want to plot a big matrix, each has either 0 or 1.The perfect display would be something similar like a qr-code:Pyplot gives you the perf...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dereine.github.com/physics-blogblog/categories/mysql/">
+  <link rel="canonical" href="http://dereine.github.com/physics-blog/blog/2011/12/09/plot-matrix/">
   <link href="/physics-blog/favicon.png" rel="icon">
   <link href="/physics-blog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/physics-blog/javascripts/modernizr-2.0.js"></script>
@@ -61,35 +61,114 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Mysql</h1>
+    
+      <h1 class="entry-title">Plot Matrix</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+  
+
+<time datetime="2011-12-09T15:11:00+01:00" pubdate>Dec 9<span>th</span>, 2011</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Asume you want to plot a big matrix, each has either 0 or 1.
+The perfect display would be something similar like a qr-code:</p>
 
-  
-  <h2>2011</h2>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/8/87/QRCode.png" /></p>
 
-<article>
-  
-<h1><a href="/physics-blog/blog/2011/12/03/show-largest-mysql-tables/">Show largest mysql tables</a></h1>
-<time datetime="2011-12-03T14:13:00+01:00" pubdate><span class='month'>Dec</span> <span class='day'>03</span> <span class='year'>2011</span></time>
+<p>Pyplot gives you the perfect tools to do that, see the endresult:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/physics-blog/blog/categories/mysql/'>mysql</a></span>
-</footer>
+<p><img src="http://wstaw.org/m/2011/12/09/image.png" /></p>
 
+<p>Here is the full code:</p>
 
-</article>
+<figure class='code'><figcaption><span>lang=python </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import matplotlib.pylab as plt
+</span><span class='line'>import matplotlib.colors as colors
+</span><span class='line'>
+</span><span class='line'>from pylab import rand
+</span><span class='line'>
+</span><span class='line'># Black and white color map
+</span><span class='line'>bw_map = colors.ListedColormap(['black', 'white'])
+</span><span class='line'>
+</span><span class='line'># Generate a 64x64 matrix and plot it with
+</span><span class='line'>plt.matshow(rand(64,64),fignum=100,cmap=bw_map)
+</span><span class='line'>
+</span><span class='line'># And show it
+</span><span class='line'>plt.show()</span></code></pre></td></tr></table></div></figure>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Daniel Wehner</span></span>
+
+      
+
+
+
+
+  
+
+<time datetime="2011-12-09T15:11:00+01:00" pubdate>Dec 9<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/physics-blog/blog/categories/physics-/'>physics,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://dereine.github.com/physics-blog/blog/2011/12/09/plot-matrix/" data-via="" data-counturl="http://dereine.github.com/physics-blog/blog/2011/12/09/plot-matrix/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/physics-blog/blog/2011/12/06/the-mate-license/" title="Previous Post: The mate license">&laquo; The mate license</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

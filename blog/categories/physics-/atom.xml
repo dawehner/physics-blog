@@ -4,7 +4,7 @@
   <title><![CDATA[Category: physics, | Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/blog/categories/physics-/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-12-06T23:08:47+01:00</updated>
+  <updated>2011-12-09T15:18:53+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Plot matrix]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2011/12/09/plot-matrix/"/>
+    <updated>2011-12-09T15:11:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2011/12/09/plot-matrix</id>
+    <content type="html"><![CDATA[<p>Asume you want to plot a big matrix, each has either 0 or 1.
+The perfect display would be something similar like a qr-code:</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/8/87/QRCode.png" /></p>
+
+<p>Pyplot gives you the perfect tools to do that, see the endresult:</p>
+
+<p><img src="http://wstaw.org/m/2011/12/09/image.png" /></p>
+
+<p>Here is the full code:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>lang=python </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>import matplotlib.pylab as plt
+</span><span class='line'>import matplotlib.colors as colors&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>from pylab import rand&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Black and white color map&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>bw_map = colors.ListedColormap(['black', 'white'])&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>Generate a 64x64 matrix and plot it with&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>plt.matshow(rand(64,64),fignum=100,cmap=bw_map)&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>And show it&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>plt.show()</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Compile root under ubuntu 11.10]]></title>
