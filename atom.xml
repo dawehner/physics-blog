@@ -4,7 +4,7 @@
   <title><![CDATA[Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2011-12-09T15:18:53+01:00</updated>
+  <updated>2012-02-05T10:38:40+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Silent starting of programms]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2012/02/05/silent-starting-of-programms/"/>
+    <updated>2012-02-05T10:27:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2012/02/05/silent-starting-of-programms</id>
+    <content type="html"><![CDATA[<p>Quite often i want programms to start in total silent mode. May way of doing this is</p>
+
+<p>{ %codeblock lang:bash% }
+  programm  2> /dev/null
+{ %endcodeblock% }
+With this you will see no output at all in the console.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Plot matrix]]></title>
