@@ -4,7 +4,7 @@
   <title><![CDATA[Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2012-02-05T10:38:40+01:00</updated>
+  <updated>2012-02-06T16:38:23+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Replace strings in variables with bash]]></title>
+    <link href="http://dereine.github.com/physics-blog/blog/2012/02/06/replace-strings-in-variables-with-bash/"/>
+    <updated>2012-02-06T16:36:00+01:00</updated>
+    <id>http://dereine.github.com/physics-blog/blog/2012/02/06/replace-strings-in-variables-with-bash</id>
+    <content type="html"><![CDATA[<p>The goal was to replace a string with another string in a string in bash.
+Here is some little code snippet</p>
+
+<figure class='code'><figcaption><span>lang=bash </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>echo 'foo-bar' | sed -e 's/-/_/g'</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Silent starting of programms]]></title>
