@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bash | Physics drupal and other random stuff]]></title>
   <link href="http://dereine.github.com/physics-blog/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://dereine.github.com/physics-blog/"/>
-  <updated>2012-02-06T16:38:23+01:00</updated>
+  <updated>2012-02-06T17:00:36+01:00</updated>
   <id>http://dereine.github.com/physics-blog/</id>
   <author>
     <name><![CDATA[Daniel Wehner]]></name>
@@ -23,7 +23,7 @@ Here is some little code snippet</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>lang=bash </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>echo 'foo-bar' | sed -e 's/-/_/g'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>DATABASE=${DATABASE/-/_}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
